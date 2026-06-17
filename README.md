@@ -51,7 +51,6 @@ lib/xps_forensic/  utilities imported by some scripts
 data/              category maps + derived result CSVs (raw .npy fetched in step 1)
 verification/      run_all.py + verifiers
 checkpoints/mrm/   model card (the 4 GB 55.pth is on Hugging Face, link above)
-docs/              number-reproduction audit
 CHECKPOINTS.md     provenance, SHA256, and sources for all detectors + front-ends
 ```
 
