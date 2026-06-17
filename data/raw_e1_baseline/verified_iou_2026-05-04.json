@@ -1,0 +1,35 @@
+{
+  "bam": {
+    "res_ms": 160,
+    "seg_eer": 0.4551689865186399,
+    "eer_threshold": 0.9979293346405029,
+    "polarity": "higher=spoof",
+    "mean_iou": 0.3120034010197907,
+    "median_iou": 0.25,
+    "iou_ge_07": 0.11576030806800038,
+    "iou_ge_09": 0.029617106540183465,
+    "n_spoof_utterances": 63882
+  },
+  "cfprf": {
+    "res_ms": 20,
+    "seg_eer": 0.3490963115530821,
+    "eer_threshold": 0.315033882856369,
+    "polarity": "higher=spoof",
+    "mean_iou": 0.3329656988444781,
+    "median_iou": 0.30357142857142855,
+    "iou_ge_07": 0.10838733915656992,
+    "iou_ge_09": 0.021242290473059703,
+    "n_spoof_utterances": 63882
+  },
+  "mrm": {
+    "res_ms": 20,
+    "seg_eer": 0.37191003699609526,
+    "eer_threshold": 0.5032927989959717,
+    "polarity": "higher=spoof",
+    "mean_iou": 0.31700450690777693,
+    "median_iou": 0.2794895440614066,
+    "iou_ge_07": 0.08619016311324004,
+    "iou_ge_09": 0.015246861400707554,
+    "n_spoof_utterances": 63882
+  }
+}

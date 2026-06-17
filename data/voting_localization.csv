@@ -1,0 +1,6 @@
+Metric,PartialSpoof,LlamaPartialSpoof,Source
+MajVote_IoU_mean,0.478,0.418,Computed from frame .npy (0.5 binarization)
+MajVote_IoU_median,0.417,0.263,Computed from frame .npy
+IoU_ge_0.5,48.1%,42.4%,Computed from frame .npy
+IoU_ge_0.7,34.6%,34.8%,Computed from frame .npy
+N_utterances,71237,140607,frame array count

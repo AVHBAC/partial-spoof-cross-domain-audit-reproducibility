@@ -1,0 +1,5 @@
+Mode,TP,FN,TN,FP,Uncertain_Spoof,Uncertain_Bonafide,Total_Spoof,Total_Bonafide
+Blind,0,225,75,0,0,0,225,75
+Guided_BAM,176,15,0,75,34,0,225,75
+Guided_CFPRF,199,10,2,67,16,6,225,75
+Guided_MRM,201,14,7,66,10,2,225,75

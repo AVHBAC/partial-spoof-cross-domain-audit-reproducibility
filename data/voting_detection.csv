@@ -1,0 +1,14 @@
+Metric,PartialSpoof,LlamaPartialSpoof,Threshold_Source,Source_File
+BAM_EER,0.5354%,15.8061%,E1/E5 EER,results.json:utt_eer
+CFPRF_EER,5.8796%,29.5881%,E1/E5 EER,results.json:utt_eer
+MRM_EER,0.9381%,28.3126%,E1/E5 EER,results.json:utt_eer
+Majority_APCER,0.8%,2.4%,E1 in-domain threshold,Computed from .npy
+Majority_BPCER,0.4%,68.7%,E1 in-domain threshold,Computed from .npy
+Majority_ACER,0.6%,35.6%,(APCER+BPCER)/2,Derived
+Agreement_Rate,93.7%,81.5%,E1 in-domain threshold,Computed from .npy
+N_utterances,71237,140607,,e1/e5 .npy length
+N_spoof,63882,130034,,label==1
+N_genuine,7355,10573,,label==0
+BAM_threshold,0.999978,0.999978,E1 EER,e1 results.json
+CFPRF_threshold,0.719654,0.719654,E1 EER,e1 results.json
+MRM_threshold,0.926306,0.926306,E1 EER,e1 results.json

@@ -1,0 +1,5 @@
+Dataset,Total_Utterances,Spoof,Genuine,Spoof_Ratio,Metadata_Source,Eval_Split
+PartialSpoof,71237,63882,7355,0.8968,ASVspoof2019.LA.cm.eval.trl.txt,eval
+LlamaPartialSpoof,140616,130043,10573,0.9248,label_R01TTS.0.a.txt + label_R01TTS.0.b.txt,full
+HQ-MPSD,21588,15487,6101,0.7174,audio file count in English/,full
+PartialEdit,88330,88330,0,1.0000,PartialEdit_E1E2.csv + E1/E2 audio count,full

@@ -1,0 +1,9 @@
+# Large binaries live on Hugging Face / the data bundle, not in git
+*.npy
+*.pth
+*.pt
+*.ckpt
+*.zip
+*.tar.gz
+__pycache__/
+*.py[cod]

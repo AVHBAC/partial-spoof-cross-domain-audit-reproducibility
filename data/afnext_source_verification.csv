@@ -1,0 +1,39 @@
+Metric,Value,Source_File,Source_Field
+APCER_Blind,1.000000,af_next_outputs.json,Computed: (FN+uncertain_spoof)/total_spoof from af_next_outputs.json + scores/
+BPCER_Blind,0.000000,af_next_outputs.json,Computed: (FP+uncertain_bonafide)/total_bonafide from af_next_outputs.json + scores/
+ACER_Blind,0.500000,compute_afnext_metrics.py (this script),(APCER+BPCER)/2 for Blind
+Accuracy_Blind,0.250000,af_next_outputs.json,Computed: (TP+TN)/N for Blind
+APCER_Guided_BAM,0.217778,af_next_outputs.json,Computed: (FN+uncertain_spoof)/total_spoof from af_next_outputs.json + scores/
+BPCER_Guided_BAM,1.000000,af_next_outputs.json,Computed: (FP+uncertain_bonafide)/total_bonafide from af_next_outputs.json + scores/
+ACER_Guided_BAM,0.608889,compute_afnext_metrics.py (this script),(APCER+BPCER)/2 for Guided_BAM
+Accuracy_Guided_BAM,0.586667,af_next_outputs.json,Computed: (TP+TN)/N for Guided_BAM
+APCER_Guided_CFPRF,0.115556,af_next_outputs.json,Computed: (FN+uncertain_spoof)/total_spoof from af_next_outputs.json + scores/
+BPCER_Guided_CFPRF,0.973333,af_next_outputs.json,Computed: (FP+uncertain_bonafide)/total_bonafide from af_next_outputs.json + scores/
+ACER_Guided_CFPRF,0.544444,compute_afnext_metrics.py (this script),(APCER+BPCER)/2 for Guided_CFPRF
+Accuracy_Guided_CFPRF,0.670000,af_next_outputs.json,Computed: (TP+TN)/N for Guided_CFPRF
+APCER_Guided_MRM,0.106667,af_next_outputs.json,Computed: (FN+uncertain_spoof)/total_spoof from af_next_outputs.json + scores/
+BPCER_Guided_MRM,0.906667,af_next_outputs.json,Computed: (FP+uncertain_bonafide)/total_bonafide from af_next_outputs.json + scores/
+ACER_Guided_MRM,0.506667,compute_afnext_metrics.py (this script),(APCER+BPCER)/2 for Guided_MRM
+Accuracy_Guided_MRM,0.693333,af_next_outputs.json,Computed: (TP+TN)/N for Guided_MRM
+Boundary_Recall_Blind,0.022657,three_way_comparison_full.json,AF-Next.blind_boundary_recall_mean
+Boundary_Recall_Guided_BAM,0.839778,three_way_comparison_full.json,AF-Next.guided_bam_boundary_recall_mean
+Boundary_Recall_Guided_CFPRF,0.740152,three_way_comparison_full.json,AF-Next.guided_cfprf_boundary_recall_mean
+Boundary_Recall_Guided_MRM,0.772442,three_way_comparison_full.json,AF-Next.guided_mrm_boundary_recall_mean
+Temporal_IoU_Blind,0.016293,af_next_results.json,metrics.temporal_iou.blind
+Temporal_IoU_Guided_BAM,0.237980,af_next_results.json,metrics.temporal_iou.guided_bam
+Temporal_IoU_Guided_CFPRF,0.262309,af_next_results.json,metrics.temporal_iou.guided_cfprf
+Temporal_IoU_Guided_MRM,0.208120,af_next_results.json,metrics.temporal_iou.guided_mrm
+Confirmation_Bias_Guided_BAM,0.817121,three_way_comparison_full.json,AF-Next.confirmation_bias_guided_bam
+Confirmation_Bias_Guided_CFPRF,0.717496,three_way_comparison_full.json,AF-Next.confirmation_bias_guided_cfprf
+Confirmation_Bias_Guided_MRM,0.749786,three_way_comparison_full.json,AF-Next.confirmation_bias_guided_mrm
+Hallucination_Rate_H3,0.254593,af_next_results.json,metrics.hallucination_rate_h3
+False_Alarm_Rate_Blind,0.888889,three_way_comparison_full.json,AF-Next.blind_false_alarm_mean
+False_Alarm_Rate_Guided_BAM,0.246680,three_way_comparison_full.json,AF-Next.guided_bam_false_alarm_mean
+False_Alarm_Rate_Guided_CFPRF,0.267237,three_way_comparison_full.json,AF-Next.guided_cfprf_false_alarm_mean
+False_Alarm_Rate_Guided_MRM,0.350532,three_way_comparison_full.json,AF-Next.guided_mrm_false_alarm_mean
+N_Utterances,300,three_way_comparison_full.json,AF-Next.n_utterances
+N_Spoof,225,three_way_comparison_full.json,AF-Next.n_spoof
+N_Bonafide,75,three_way_comparison_full.json,AF-Next.n_bonafide
+Cross_Detector_Consistency,0.666667,three_way_comparison_full.json,AF-Next.cross_detector_consistency
+N_Evaluation,150,af_next_results.json,n_evaluation
+N_Hallucination,100,af_next_results.json,n_hallucination
