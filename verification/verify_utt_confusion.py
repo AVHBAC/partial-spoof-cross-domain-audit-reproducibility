@@ -8,9 +8,9 @@ NPY_BASE = (Path(__file__).resolve().parents[1] / "data")
 CSV_FILE = (Path(__file__).resolve().parents[1] / "data" / "utt_confusion_matrices.csv")
 
 DATASETS = {
-    'PartialSpoof': {'dir': 'e1_baseline', 'prefix': '', 'json_dir': 'e1_baseline', 'json_key': None},
-    'LlamaPartialSpoof': {'dir': 'e5_cross_dataset', 'prefix': 'llamapartialspoof_', 'json_dir': 'e5_cross_dataset', 'json_key': 'llamapartialspoof'},
-    'HQ-MPSD': {'dir': 'e5_cross_dataset', 'prefix': 'hqmpsd_', 'json_dir': 'e5_cross_dataset', 'json_key': 'hqmpsd'},
+    'PartialSpoof': {'dir': 'raw_e1_baseline', 'prefix': '', 'json_dir': 'raw_e1_baseline', 'json_key': None},
+    'LlamaPartialSpoof': {'dir': 'raw_e5_cross_dataset', 'prefix': 'llamapartialspoof_', 'json_dir': 'raw_e5_cross_dataset', 'json_key': 'llamapartialspoof'},
+    'HQ-MPSD': {'dir': 'raw_e5_cross_dataset', 'prefix': 'hqmpsd_', 'json_dir': 'raw_e5_cross_dataset', 'json_key': 'hqmpsd'},
 }
 
 def main():
@@ -22,9 +22,9 @@ def main():
     csv_lookup = {(r['Dataset'], r['Detector']): r for r in csv_rows}
 
     # Load JSONs for thresholds
-    with open(NPY_BASE / "e1_baseline" / "results.json") as f:
+    with open(NPY_BASE / "raw_e1_baseline" / "results.json") as f:
         e1_json = json.load(f)
-    with open(NPY_BASE / "e5_cross_dataset" / "results.json") as f:
+    with open(NPY_BASE / "raw_e5_cross_dataset" / "results.json") as f:
         e5_json = json.load(f)
 
     for ds_name, cfg in DATASETS.items():
