@@ -10,9 +10,8 @@ tags:
 
 # MRM (Multi-Resolution Model): Partial Spoof Detector Checkpoint
 
-Checkpoint released for double-blind review of the IJCB 2026 submission
+Checkpoint for the IJCB 2026 submission
 *"How Trustworthy Are Partial Spoof Detectors? A Cross-Domain Operational Audit."*
-**Authors anonymous (under review).**
 
 ## What this is
 A multi-resolution partial-spoof detector: the model of Zhang et al. (the
@@ -52,4 +51,4 @@ Released under MIT, following the `MultiResoModel-Simple` reimplementation (MIT)
 If you use this checkpoint, cite the original multi-resolution model (Zhang et al.,
 IEEE/ACM TASLP 2023, *The PartialSpoof Database and Countermeasures...*) and the
 reimplementation (Luong et al., ICASSP 2025, *LlamaPartialSpoof*), plus the IJCB
-2026 paper once de-anonymized.
+2026 paper.
