@@ -8,11 +8,11 @@ from pathlib import Path
 import json
 
 _BASE = Path(__file__).resolve().parents[3]
-RESULTS_DIR = _BASE / "xps_forensic" / "results"
+RESULTS_DIR = Path(__file__).resolve().parents[2] / "data"
 OUT_DIR = Path(__file__).resolve().parents[1] / "figures"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-with open(RESULTS_DIR / "e1_baseline" / "results.json") as f:
+with open(RESULTS_DIR / "raw_e1_baseline" / "results.json") as f:
     e1_json = json.load(f)
 
 THRESHOLDS = {
@@ -26,24 +26,24 @@ DET_LABELS = {"bam": "BAM", "cfprf": "CFPRF", "mrm": "MRM"}
 
 DATASETS = {
     "PartialSpoof\n(in-domain)": {
-        "bam":   (RESULTS_DIR / "e1_baseline/bam_utt_scores.npy",   RESULTS_DIR / "e1_baseline/bam_utt_labels.npy"),
-        "cfprf": (RESULTS_DIR / "e1_baseline/cfprf_utt_scores.npy", RESULTS_DIR / "e1_baseline/cfprf_utt_labels.npy"),
-        "mrm":   (RESULTS_DIR / "e1_baseline/mrm_utt_scores.npy",   RESULTS_DIR / "e1_baseline/mrm_utt_labels.npy"),
+        "bam":   (RESULTS_DIR / "raw_e1_baseline/bam_utt_scores.npy",   RESULTS_DIR / "raw_e1_baseline/bam_utt_labels.npy"),
+        "cfprf": (RESULTS_DIR / "raw_e1_baseline/cfprf_utt_scores.npy", RESULTS_DIR / "raw_e1_baseline/cfprf_utt_labels.npy"),
+        "mrm":   (RESULTS_DIR / "raw_e1_baseline/mrm_utt_scores.npy",   RESULTS_DIR / "raw_e1_baseline/mrm_utt_labels.npy"),
     },
     "LlamaPS\n(cross-domain)": {
-        "bam":   (RESULTS_DIR / "e5_cross_dataset/bam_llamapartialspoof_utt_scores.npy",   RESULTS_DIR / "e5_cross_dataset/bam_llamapartialspoof_utt_labels.npy"),
-        "cfprf": (RESULTS_DIR / "e5_cross_dataset/cfprf_llamapartialspoof_utt_scores.npy", RESULTS_DIR / "e5_cross_dataset/cfprf_llamapartialspoof_utt_labels.npy"),
-        "mrm":   (RESULTS_DIR / "e5_cross_dataset/mrm_llamapartialspoof_utt_scores.npy",   RESULTS_DIR / "e5_cross_dataset/mrm_llamapartialspoof_utt_labels.npy"),
+        "bam":   (RESULTS_DIR / "raw_e5_cross_dataset/bam_llamapartialspoof_utt_scores.npy",   RESULTS_DIR / "raw_e5_cross_dataset/bam_llamapartialspoof_utt_labels.npy"),
+        "cfprf": (RESULTS_DIR / "raw_e5_cross_dataset/cfprf_llamapartialspoof_utt_scores.npy", RESULTS_DIR / "raw_e5_cross_dataset/cfprf_llamapartialspoof_utt_labels.npy"),
+        "mrm":   (RESULTS_DIR / "raw_e5_cross_dataset/mrm_llamapartialspoof_utt_scores.npy",   RESULTS_DIR / "raw_e5_cross_dataset/mrm_llamapartialspoof_utt_labels.npy"),
     },
     "HQ-MPSD\n(cross-domain)": {
-        "bam":   (RESULTS_DIR / "e5_cross_dataset/bam_hqmpsd_utt_scores.npy",   RESULTS_DIR / "e5_cross_dataset/bam_hqmpsd_utt_labels.npy"),
-        "cfprf": (RESULTS_DIR / "e5_cross_dataset/cfprf_hqmpsd_utt_scores.npy", RESULTS_DIR / "e5_cross_dataset/cfprf_hqmpsd_utt_labels.npy"),
-        "mrm":   (RESULTS_DIR / "e5_cross_dataset/mrm_hqmpsd_utt_scores.npy",   RESULTS_DIR / "e5_cross_dataset/mrm_hqmpsd_utt_labels.npy"),
+        "bam":   (RESULTS_DIR / "raw_e5_cross_dataset/bam_hqmpsd_utt_scores.npy",   RESULTS_DIR / "raw_e5_cross_dataset/bam_hqmpsd_utt_labels.npy"),
+        "cfprf": (RESULTS_DIR / "raw_e5_cross_dataset/cfprf_hqmpsd_utt_scores.npy", RESULTS_DIR / "raw_e5_cross_dataset/cfprf_hqmpsd_utt_labels.npy"),
+        "mrm":   (RESULTS_DIR / "raw_e5_cross_dataset/mrm_hqmpsd_utt_scores.npy",   RESULTS_DIR / "raw_e5_cross_dataset/mrm_hqmpsd_utt_labels.npy"),
     },
     "PartialEdit\n(cross-domain)": {
-        "bam":   (RESULTS_DIR / "e5_cross_dataset/bam_partialedit_utt_scores.npy",   RESULTS_DIR / "e5_cross_dataset/bam_partialedit_utt_labels.npy"),
-        "cfprf": (RESULTS_DIR / "e5_cross_dataset/cfprf_partialedit_utt_scores.npy", RESULTS_DIR / "e5_cross_dataset/cfprf_partialedit_utt_labels.npy"),
-        "mrm":   (RESULTS_DIR / "e5_cross_dataset/mrm_partialedit_utt_scores.npy",   RESULTS_DIR / "e5_cross_dataset/mrm_partialedit_utt_labels.npy"),
+        "bam":   (RESULTS_DIR / "raw_e5_cross_dataset/bam_partialedit_utt_scores.npy",   RESULTS_DIR / "raw_e5_cross_dataset/bam_partialedit_utt_labels.npy"),
+        "cfprf": (RESULTS_DIR / "raw_e5_cross_dataset/cfprf_partialedit_utt_scores.npy", RESULTS_DIR / "raw_e5_cross_dataset/cfprf_partialedit_utt_labels.npy"),
+        "mrm":   (RESULTS_DIR / "raw_e5_cross_dataset/mrm_partialedit_utt_scores.npy",   RESULTS_DIR / "raw_e5_cross_dataset/mrm_partialedit_utt_labels.npy"),
     },
 }
 
@@ -94,12 +94,12 @@ import csv as _csv
 _LLAMA_TERNARY = {
     r["utterance_id"]: int(r["ternary_label"])
     for r in _csv.DictReader(open(
-        _BASE / "partial-deepfake-analysis" / "data" / "llamaps_utt_categories.csv"))
+        Path(__file__).resolve().parents[2] / "data" / "llamaps_utt_categories.csv"))
 }
 _HQMPSD_KEEP = {
     r["utterance_id"]
     for r in _csv.DictReader(open(
-        _BASE / "partial-deepfake-analysis" / "data" / "hqmpsd_utt_categories.csv"))
+        Path(__file__).resolve().parents[2] / "data" / "hqmpsd_utt_categories.csv"))
     if r["binary_label"] == "0" or r["is_partial_spoof"] == "1"
 }
 

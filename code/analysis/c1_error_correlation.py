@@ -4,10 +4,10 @@ import csv
 from pathlib import Path
 
 _BASE = Path(__file__).resolve().parents[3]
-RESULTS_DIR = _BASE / "xps_forensic" / "results"
-OUT_CSV = _BASE / "xps_forensic" / "deliverables" / "data" / "error_correlation.csv"
+RESULTS_DIR = Path(__file__).resolve().parents[2] / "data"
+OUT_CSV = Path(__file__).resolve().parents[2] / "data" / "error_correlation.csv"
 
-with open(RESULTS_DIR / "e1_baseline" / "results.json") as f:
+with open(RESULTS_DIR / "raw_e1_baseline" / "results.json") as f:
     e1_json = json.load(f)
 
 THRESHOLDS = {
@@ -18,24 +18,24 @@ THRESHOLDS = {
 
 DATASETS = {
     "PartialSpoof": {
-        "bam":   (RESULTS_DIR / "e1_baseline/bam_utt_scores.npy",   RESULTS_DIR / "e1_baseline/bam_utt_labels.npy"),
-        "cfprf": (RESULTS_DIR / "e1_baseline/cfprf_utt_scores.npy", RESULTS_DIR / "e1_baseline/cfprf_utt_labels.npy"),
-        "mrm":   (RESULTS_DIR / "e1_baseline/mrm_utt_scores.npy",   RESULTS_DIR / "e1_baseline/mrm_utt_labels.npy"),
+        "bam":   (RESULTS_DIR / "raw_e1_baseline/bam_utt_scores.npy",   RESULTS_DIR / "raw_e1_baseline/bam_utt_labels.npy"),
+        "cfprf": (RESULTS_DIR / "raw_e1_baseline/cfprf_utt_scores.npy", RESULTS_DIR / "raw_e1_baseline/cfprf_utt_labels.npy"),
+        "mrm":   (RESULTS_DIR / "raw_e1_baseline/mrm_utt_scores.npy",   RESULTS_DIR / "raw_e1_baseline/mrm_utt_labels.npy"),
     },
     "LlamaPS": {
-        "bam":   (RESULTS_DIR / "e5_cross_dataset/bam_llamapartialspoof_utt_scores.npy",   RESULTS_DIR / "e5_cross_dataset/bam_llamapartialspoof_utt_labels.npy"),
-        "cfprf": (RESULTS_DIR / "e5_cross_dataset/cfprf_llamapartialspoof_utt_scores.npy", RESULTS_DIR / "e5_cross_dataset/cfprf_llamapartialspoof_utt_labels.npy"),
-        "mrm":   (RESULTS_DIR / "e5_cross_dataset/mrm_llamapartialspoof_utt_scores.npy",   RESULTS_DIR / "e5_cross_dataset/mrm_llamapartialspoof_utt_labels.npy"),
+        "bam":   (RESULTS_DIR / "raw_e5_cross_dataset/bam_llamapartialspoof_utt_scores.npy",   RESULTS_DIR / "raw_e5_cross_dataset/bam_llamapartialspoof_utt_labels.npy"),
+        "cfprf": (RESULTS_DIR / "raw_e5_cross_dataset/cfprf_llamapartialspoof_utt_scores.npy", RESULTS_DIR / "raw_e5_cross_dataset/cfprf_llamapartialspoof_utt_labels.npy"),
+        "mrm":   (RESULTS_DIR / "raw_e5_cross_dataset/mrm_llamapartialspoof_utt_scores.npy",   RESULTS_DIR / "raw_e5_cross_dataset/mrm_llamapartialspoof_utt_labels.npy"),
     },
     "PartialEdit": {
-        "bam":   (RESULTS_DIR / "e5_cross_dataset/bam_partialedit_utt_scores.npy",   RESULTS_DIR / "e5_cross_dataset/bam_partialedit_utt_labels.npy"),
-        "cfprf": (RESULTS_DIR / "e5_cross_dataset/cfprf_partialedit_utt_scores.npy", RESULTS_DIR / "e5_cross_dataset/cfprf_partialedit_utt_labels.npy"),
-        "mrm":   (RESULTS_DIR / "e5_cross_dataset/mrm_partialedit_utt_scores.npy",   RESULTS_DIR / "e5_cross_dataset/mrm_partialedit_utt_labels.npy"),
+        "bam":   (RESULTS_DIR / "raw_e5_cross_dataset/bam_partialedit_utt_scores.npy",   RESULTS_DIR / "raw_e5_cross_dataset/bam_partialedit_utt_labels.npy"),
+        "cfprf": (RESULTS_DIR / "raw_e5_cross_dataset/cfprf_partialedit_utt_scores.npy", RESULTS_DIR / "raw_e5_cross_dataset/cfprf_partialedit_utt_labels.npy"),
+        "mrm":   (RESULTS_DIR / "raw_e5_cross_dataset/mrm_partialedit_utt_scores.npy",   RESULTS_DIR / "raw_e5_cross_dataset/mrm_partialedit_utt_labels.npy"),
     },
     "HQ-MPSD": {
-        "bam":   (RESULTS_DIR / "e5_cross_dataset/bam_hqmpsd_utt_scores.npy",   RESULTS_DIR / "e5_cross_dataset/bam_hqmpsd_utt_labels.npy"),
-        "cfprf": (RESULTS_DIR / "e5_cross_dataset/cfprf_hqmpsd_utt_scores.npy", RESULTS_DIR / "e5_cross_dataset/cfprf_hqmpsd_utt_labels.npy"),
-        "mrm":   (RESULTS_DIR / "e5_cross_dataset/mrm_hqmpsd_utt_scores.npy",   RESULTS_DIR / "e5_cross_dataset/mrm_hqmpsd_utt_labels.npy"),
+        "bam":   (RESULTS_DIR / "raw_e5_cross_dataset/bam_hqmpsd_utt_scores.npy",   RESULTS_DIR / "raw_e5_cross_dataset/bam_hqmpsd_utt_labels.npy"),
+        "cfprf": (RESULTS_DIR / "raw_e5_cross_dataset/cfprf_hqmpsd_utt_scores.npy", RESULTS_DIR / "raw_e5_cross_dataset/cfprf_hqmpsd_utt_labels.npy"),
+        "mrm":   (RESULTS_DIR / "raw_e5_cross_dataset/mrm_hqmpsd_utt_scores.npy",   RESULTS_DIR / "raw_e5_cross_dataset/mrm_hqmpsd_utt_labels.npy"),
     },
 }
 

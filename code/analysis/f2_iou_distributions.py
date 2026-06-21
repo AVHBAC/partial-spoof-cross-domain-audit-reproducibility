@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 
 _BASE = Path(__file__).resolve().parents[3]
-DATA_DIR = _BASE / "xps_forensic" / "deliverables" / "data"
+DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 OUT_DIR  = Path(__file__).resolve().parents[1] / "figures"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 

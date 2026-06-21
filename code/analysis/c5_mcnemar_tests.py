@@ -10,21 +10,21 @@ import numpy as np
 from scipy.stats import binomtest
 
 _BASE = Path(__file__).resolve().parents[3]
-RESULTS_DIR = _BASE / "xps_forensic" / "results"
-OUT_DIR     = _BASE / "xps_forensic" / "deliverables" / "data"
+RESULTS_DIR = Path(__file__).resolve().parents[2] / "data"
+OUT_DIR     = Path(__file__).resolve().parents[2] / "data"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 DETECTORS = ("bam", "cfprf", "mrm")
 
 PAIRED_DATASETS = {
-    "PartialSpoof":      ("e1_baseline",      ""),
-    "LlamaPartialSpoof": ("e5_cross_dataset", "llamapartialspoof_"),
-    "HQ-MPSD":           ("e5_cross_dataset", "hqmpsd_"),
+    "PartialSpoof":      ("raw_e1_baseline",      ""),
+    "LlamaPartialSpoof": ("raw_e5_cross_dataset", "llamapartialspoof_"),
+    "HQ-MPSD":           ("raw_e5_cross_dataset", "hqmpsd_"),
 }
 
-PARTIALEDIT = ("e5_cross_dataset", "partialedit_")
+PARTIALEDIT = ("raw_e5_cross_dataset", "partialedit_")
 
-with open(RESULTS_DIR / "e1_baseline" / "results.json") as fh:
+with open(RESULTS_DIR / "raw_e1_baseline" / "results.json") as fh:
     e1 = json.load(fh)
 THRESHOLDS = {det: float(e1[det]["utt_eer_threshold"]) for det in DETECTORS}
 
@@ -150,7 +150,7 @@ def run_partialedit_wilson():
     return out, rows
 
 def main():
-    print("Thresholds (PartialSpoof in-domain EER threshold from e1_baseline/results.json):")
+    print("Thresholds (PartialSpoof in-domain EER threshold from raw_e1_baseline/results.json):")
     for det, t in THRESHOLDS.items():
         print(f"  {det.upper():6s}  thr = {t:.6f}")
     print()
