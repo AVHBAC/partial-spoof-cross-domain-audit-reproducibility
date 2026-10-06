@@ -1,0 +1,4 @@
+dataset,best_single_EER,softvote_EER,majority_BPCER,majority_APCER,majority_ACER,OR_BPCER,OR_APCER,OR_ACER,AND_BPCER,AND_APCER,AND_ACER
+PartialSpoof,0.54,0.60,0.4,0.8,0.6,6.9,0.2,3.5,0.1,6.4,3.2
+LlamaPS,15.81,16.36,68.7,2.4,35.6,93.6,0.1,46.9,14.8,14.0,14.4
+HQ-MPSD,8.74,4.04,30.0,0.1,15.1,58.9,0.0,29.4,7.5,3.8,5.7

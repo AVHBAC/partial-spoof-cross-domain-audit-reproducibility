@@ -1,8 +1,8 @@
 # MRM Training Recipe (the one locally-trained model)
 
 BAM and CFPRF use the authors' released checkpoints (see `CHECKPOINTS.md`).
-**MRM was trained by us** on PartialSpoof, so its checkpoint
-(`checkpoints/mrm/55.pth`) is included in this package and documented here.
+**MRM was trained by us** on PartialSpoof, so its checkpoint (`55.pth`, hosted on
+Hugging Face, see `CHECKPOINTS.md`) is documented here.
 
 ## Code
 - Reimplementation: `MultiResoModel-Simple`, `github.com/hieuthi/MultiResoModel-Simple`
@@ -26,11 +26,14 @@ python -u train.py --config configs/baseline.toml --batch_size 8 --num_workers 6
 - Hardware used: NVIDIA RTX 4080 (16 GB), 64 GB RAM
 
 ## Reproducibility caveat (important)
-The config sets `random_seek = true` and **no fixed random seed**, so training is
-**stochastic and not bit-reproducible**: re-running `train_baseline.sh` yields a
-*similar* but not identical checkpoint. **This is why `55.pth` is shipped** rather
-than only the recipe, the shipped weights are the authoritative artifact behind
-every MRM number in the paper.
+**A fixed seed was used.** `train.py` at the commit above defaults to `--seed 1234`
+and calls `reproducibility(args.seed)`; `train_baseline.sh` passes no override, so the
+default applied.
+
+Bit-identical retraining is still **not guaranteed**: PyTorch does not promise identical
+results across releases, platforms, or devices. **This is why `55.pth` is hosted** rather
+than only the recipe; the hosted weights are the authoritative artifact behind every MRM
+number in the paper.
 
 Training logs from the original run were not retained; the config + command +
 commit above fully specify the recipe.
@@ -38,7 +41,7 @@ commit above fully specify the recipe.
 ## Our result vs. the public reimplementation checkpoint
 | | utt-EER (ps-eval) | seg/frame-EER (ps-eval) |
 |---|---|---|
-| Our `55.pth` (this package) | **0.94%** | **13.91%** |
+| Our `55.pth` (hosted on Hugging Face) | **0.94%** | **13.91%** |
 | Luong's released `baseline-ps-e55` | 1.48% | 13.67% |
 | Original Zhang et al. MultiResoModel | 0.49% | - |
 

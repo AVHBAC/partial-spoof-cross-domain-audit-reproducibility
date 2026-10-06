@@ -1,0 +1,16 @@
+scope,dataset,metric,unit,point_pct,ci_low_pct,ci_high_pct,half_width_pp,n,method
+detector,PartialSpoof,Utt-EER,BAM,0.54,0.37,0.70,0.17,7355,normal
+detector,PartialSpoof,Utt-EER,CFPRF,5.88,5.34,6.42,0.54,7355,normal
+detector,PartialSpoof,Utt-EER,MRM,0.94,0.72,1.16,0.22,7355,normal
+ensemble,PartialSpoof,BPCER,MAJORITY,0.38,0.26,0.55,0.14,7355,wilson
+ensemble,PartialSpoof,APCER,MAJORITY,0.76,0.70,0.83,0.07,63882,wilson
+detector,LlamaPS,Utt-EER,BAM,15.81,15.11,16.50,0.70,10573,normal
+detector,LlamaPS,Utt-EER,CFPRF,29.59,28.72,30.46,0.87,10573,normal
+detector,LlamaPS,Utt-EER,MRM,28.31,27.45,29.17,0.86,10573,normal
+ensemble,LlamaPS,BPCER,MAJORITY,68.70,67.81,69.58,0.88,10573,wilson
+ensemble,LlamaPS,APCER,MAJORITY,2.40,2.32,2.48,0.08,130034,wilson
+detector,HQ-MPSD,Utt-EER,BAM,8.74,8.03,9.45,0.71,6101,normal
+detector,HQ-MPSD,Utt-EER,CFPRF,11.96,11.15,12.78,0.81,6101,normal
+detector,HQ-MPSD,Utt-EER,MRM,11.77,10.96,12.58,0.81,6101,normal
+ensemble,HQ-MPSD,BPCER,MAJORITY,29.98,28.84,31.14,1.15,6101,wilson
+ensemble,HQ-MPSD,APCER,MAJORITY,0.13,0.08,0.20,0.06,15487,wilson

@@ -21,6 +21,7 @@ What each required file is, where it lives, and which part of the paper it repro
 | Result CSVs `data/*.csv` | repo | yes | the published numbers (Tables 1-5) |
 | Category maps `data/*_utt_categories.csv` | repo | yes | partial / full / bonafide labels for partial-only scoring |
 | Raw score outputs `data/raw_e{1,5}_*/*.npy` | HF dataset | no | per-utterance/-frame scores; inputs to every analysis script |
+| Operational-IoU arrays `data/iou_dist_<det>_<dataset>.npy` (9 files, 3.5 MB) | repo | yes | precomputed per-utterance operational IoU; read by `c11` and `f2`. No script in this repo regenerates them |
 | MRM checkpoint `55.pth` (4 GB) | HF model | no | the locally-trained MRM weights; SHA256 in `CHECKPOINTS.md` |
 
 ## Script to paper element

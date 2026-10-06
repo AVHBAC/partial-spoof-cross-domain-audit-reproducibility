@@ -10,8 +10,9 @@ tags:
 
 # MRM (Multi-Resolution Model): Partial Spoof Detector Checkpoint
 
-Checkpoint for the IJCB 2026 submission
-*"How Trustworthy Are Partial Spoof Detectors? A Cross-Domain Operational Audit."*
+Checkpoint for the paper
+*"How Trustworthy Are Partial Spoof Detectors? A Cross-Domain Operational Audit"*
+(accepted at IJCB 2026, Special Session 1: Trustworthy and Secure AI for Behavioural and Biometric Recognition).
 
 ## What this is
 A multi-resolution partial-spoof detector: the model of Zhang et al. (the
@@ -39,8 +40,8 @@ behaviour (LlamaPartialSpoof, PartialEdit, HQ-MPSD) is the subject of the paper.
 ## Training recipe
 - Config: multi-resolution units {0.02, 0.04, 0.08, 0.16, 0.32, 0.64} s; segment
   duration 9.6 s; `random_seek`, `use_mask`; lr 1e-5; scheduler step 10, decay 0.5.
-- Trained to epoch 55. **Not bit-reproducible** (`random_seek`, no fixed seed),
-  which is why the trained weights are released directly.
+- Trained to epoch 55 with the upstream default seed (`--seed 1234`). Bit-identical
+  retraining is not guaranteed, which is why the trained weights are released directly.
 
 ## Intended use
 Research / reproducibility only. Audits an existing detector design under
@@ -50,5 +51,5 @@ cross-domain partial-spoof attacks; not a deployable forensic tool.
 Released under MIT, following the `MultiResoModel-Simple` reimplementation (MIT).
 If you use this checkpoint, cite the original multi-resolution model (Zhang et al.,
 IEEE/ACM TASLP 2023, *The PartialSpoof Database and Countermeasures...*) and the
-reimplementation (Luong et al., ICASSP 2025, *LlamaPartialSpoof*), plus the IJCB
-2026 paper.
+reimplementation (Luong et al., ICASSP 2025, *LlamaPartialSpoof*), plus the paper
+above.
