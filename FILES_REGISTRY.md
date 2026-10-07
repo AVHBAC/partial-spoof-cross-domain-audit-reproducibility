@@ -39,5 +39,6 @@ What each required file is, where it lives, and which part of the paper it repro
 | verification suite | recomputes EER from raw `.npy`; checks raw -> JSON -> CSV |
 
 ## Reproduce
-See `README.md`: download the score data, then run the analysis scripts. Each prints
-a reproduction-guard line confirming the regenerated values match the paper.
+See `README.md`: download the score data, then run the analysis scripts. c10, c11, c6,
+c12, c4b, c7, and c8 assert that the regenerated values match the paper; the others write
+their CSV or figure, which can be diffed against the committed copy.

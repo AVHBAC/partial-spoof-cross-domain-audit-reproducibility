@@ -39,8 +39,9 @@ python code/analysis/c12_partial_discordance.py           # partial-only discord
 python code/analysis/c4b_ensemble_far.py                  # ensemble FAR=1% operating points
 python code/analysis/c4_far_operating_points.py           # per-detector FAR=1% operating points
 ```
-Each script prints a "Reproduction guards passed" line confirming the regenerated
-values match the paper. The expected outputs are also committed under `data/` as CSVs.
+c10, c11, c6, c12, and c4b assert that the regenerated values match the paper and print a
+"Reproduction guard(s) passed" line; c4 has no guard of its own, but c4b asserts that c4's
+thresholds reproduce. The expected outputs are also committed under `data/` as CSVs.
 
 The remaining scripts in `code/analysis/` (c1, c2, c5, c7, c8, c9, f2, f3,
 `compute_cross_domain_localization_iou.py`) run the same way; `FILES_REGISTRY.md` maps

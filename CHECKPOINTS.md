@@ -58,5 +58,5 @@ their authors' sources above.
 |---|---|---|
 | PartialSpoof | in-domain train/threshold/eval | Zhang et al. (Zenodo) |
 | LlamaPartialSpoof | cross-domain (LLM-TTS) | Luong et al. (ICASSP 2025) |
-| PartialEdit | cross-domain (neural editing), E1+E2 subsets | Zhang You et al. (Interspeech 2025) |
+| PartialEdit | cross-domain (neural editing), E1+E2 subsets | You Zhang et al. (Interspeech 2025) |
 | HQ-MPSD | cross-domain (TTS), **English subset only** | Li et al. (arXiv 2512.13012) |
