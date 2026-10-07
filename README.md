@@ -2,8 +2,8 @@
 
 **Paper:** accepted at IJCB 2026, Special Session 1: Trustworthy and Secure AI for Behavioural and Biometric Recognition.
 
-**Author and maintainer of this repository:** Yash Sukhdeve, Department of Electrical and
-Computer Engineering, Clarkson University.
+**Authors:** Yash Sukhdeve, Ajan Ahmed, and Masudul H. Imtiaz, Department of Electrical
+and Computer Engineering, Clarkson University. Repository maintained by Yash Sukhdeve.
 
 Analysis code, a verification suite, and the derived result tables for a
 cross-domain operational audit of three partial-spoof detectors (MRM, BAM, CFPRF)
